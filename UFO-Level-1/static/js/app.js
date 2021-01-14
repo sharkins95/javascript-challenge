@@ -1,11 +1,11 @@
 // data from data.js
 var tableData = data;
 
-// Get a refernece to the table body
+// Get a reference to the table body
 var tbody = d3.select("tbody");
 
 // Create table
-createTable(ufoData);
+ufoData(data);
 
 // Select filter button and event handler
 let filterButton = d3.select('#filter-btn').on('click', runClick);
@@ -19,10 +19,10 @@ function runClick(){
     tbody.html('')
 
     // Filter for date the user inputs
-    let filterResult = ufoData.filter((item) => item.datetime === value);
+    let filterResult = data.filter((item) => item.datetime === value);
 
     // Insert filtered data into table
-    createTable(filterResult);
+    ufoData(filterResult);
 }
 
 // Loop through data and console.log each ufo sighting object
